@@ -26,13 +26,13 @@ jobs:
 
     # Step 3: Build the Docker image
     - name: Build Docker image
-      run: docker build -t my-dockerhub-username/flask-app:latest .
+      run: docker build -t vancetechwell/flask-app:latest .
 
     # Step 4: Run tests inside the container
     - name: Test Docker image
       run: |
-        docker run --rm my-dockerhub-username/flask-app:latest curl -s http://localhost:5000 | grep "Hello, Docker CI/CD!"
+        docker run --rm vancetechwell/flask-app:latest curl -s http://localhost:5000 | grep "Hello, Docker CI/CD!"
 
     # Step 5: Push the Docker image to Docker Hub
     - name: Push Docker image
-      run: docker push my-dockerhub-username/flask-app:latest
+      run: docker push vancetechwell/flask-app:latest
